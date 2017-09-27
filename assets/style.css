@@ -1,0 +1,195 @@
+@import url("fonts/fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+	font-size: 100%;
+	background: #F5F5F5;
+}
+
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+h1 {
+  font: 36px DINPro-Regular;
+  color: #333;
+  letter-spacing: 0;
+  margin: 40px 0 0;
+  text-align: center
+}
+
+
+.iz-box {
+  margin: 80px 0;
+  padding: 80px 0;
+  width: 100%;
+  background: #FFF;
+  border: 0 solid #DDDCDC;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+}
+
+form {
+  text-align: center
+}
+
+fieldset {
+  border: none;
+  text-align: center
+}
+
+.iz-label, label {
+  display: block;
+  max-width: 300px;
+  width: 100%;
+  border-bottom: 1px solid #EFEEED;
+  margin: 0 auto 50px;
+}
+
+.iz-label-text {
+  display: block;
+  margin-bottom: 10px;
+  font: 16px DINPro-Light;
+  color: #666;
+  letter-spacing: 0;
+}
+
+input {
+  border: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+[type="date"]::-webkit-datetime-edit {
+  color: #999;
+}
+
+[type="number"], [type="text"], [type="date"] {
+  font: 40px DINPro-Light;
+  color: #333;
+  letter-spacing: 0;
+  width: 100%;
+  text-align: center;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999;
+  letter-spacing: 0;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #999;
+  letter-spacing: 0;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #999;
+  letter-spacing: 0;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #999;
+  letter-spacing: 0;
+}
+
+.iz-future-cdi {
+  font: 40px DINPro-Regular;
+  color: #000;
+  letter-spacing: 0;
+}
+
+.iz-mobile-badges img {
+  max-width: 135px;
+}
+
+.iz-btn {
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 200, 179, 1);
+  color: #fff;
+  font: 16px DINPro-Light;
+  max-width: 360px;
+  width: 90%;
+  height: 50px;
+  margin-top: 80px;
+  transition: all .15s linear;
+}
+
+.iz-btn:hover {
+  background: rgba(0, 200, 179, .7);
+}
+
+.iz-result-value {
+  font-size: 46px;
+  color: #333;
+  margin-top: 5px;
+}
+
+.iz-rend {
+  margin-top: 10px;
+  color: #acacac;
+}
+
+.iz-rend span {
+  color: #00c8b3;
+}
+
+p, table {
+  font: 14px DINPro-Light;
+  color: #666;
+}
+
+table {
+  margin: 40px auto;
+  width: 55%;
+  border: 0;
+}
+
+td {
+  padding: 5px 0;
+  color: #000;
+}
+
+th {
+  color: #7B7B7B;
+  text-align: left;
+}
+
+table + .iz-btn {
+  margin-top: 30px;
+}
+
+.iz-align-right {
+  text-align: right;
+}
+
+.iz-sign::before,
+.iz-result-value::before,
+.iz-rend span::before {
+  content: "R$ ";
+}
+
+.iz-percent::after {
+  content: "%";
+}
+
+.iz-spacer {
+  display: block;
+  padding-top: 30px;
+}
+
+.iz-disclaimer {
+  padding: 0 20px 80px;
+  text-align: center;
+  font: 14px/20px DINPro-Light;
+  color: #333;
+}
