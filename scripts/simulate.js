@@ -1,5 +1,6 @@
 (
     function () {
+
         function handleSimulate (e) {
             e.preventDefault()
             const URL_API_SIMULATOR = 'http://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate'
@@ -44,7 +45,7 @@
 
             let taxesAmount = document.querySelector('span[data-attr="taxesAmount"]')
             taxesAmount.appendChild(document.createTextNode(data.taxesAmount))
-            
+
             let taxesPercent = document.querySelector('span[data-attr="taxesPercent"]')
             taxesAmount.appendChild(document.createTextNode(` (${data.taxesPercent} %)`))  
 
@@ -73,6 +74,10 @@
         }
 
         function init() {
+
+            let today = document.querySelector('span[data-attr="today"]');
+            today.appendChild(document.createTextNode(convertDate(new Date())))
+            
             document.querySelector('.iz-btn-simular').addEventListener('click', handleSimulate)
     
             vanillaTextMask.maskInput({
