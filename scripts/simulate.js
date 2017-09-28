@@ -3,13 +3,11 @@
 
         function handleSimulate (e) {
             e.preventDefault()
-            const URL_API_SIMULATOR = 'http://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate'
+            const URL_API_SIMULATOR = 'https://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate'
 
             const investedAmount = document.querySelector('input[name=investedAmount]').value
             const maturityDate = document.querySelector('input[name=maturityDate]').value
             const rate = document.querySelector('input[name=rate]').value
-
-            console.log(investedAmount, maturityDate, rate)
 
             axios.get(URL_API_SIMULATOR, {
                 params: {
