@@ -15,7 +15,7 @@
                     index: 'CDI',
                     rate: rate.replace(/\./g, '').replace('%', '').trim(),
                     isTaxFree: false,
-                    maturityDate: maturityDate
+                    maturityDate: maturityDate.replace(/\//g, '-')
                 }
             })
             .then(response => {

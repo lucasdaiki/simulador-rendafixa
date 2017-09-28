@@ -26,7 +26,7 @@ e.exports=function(e){return null!=e&&(n(e)||r(e)||!!e._isBuffer)}},function(e,t
                     index: 'CDI',
                     rate: rate.replace(/\./g, '').replace('%', '').trim(),
                     isTaxFree: false,
-                    maturityDate: maturityDate
+                    maturityDate: maturityDate.replace(/\//g, '-')
                 }
             })
             .then(response => {
