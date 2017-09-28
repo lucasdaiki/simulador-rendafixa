@@ -43,9 +43,8 @@
             tdGrossAmountProfit.appendChild(document.createTextNode(data.grossAmountProfit))
 
             let taxesAmount = document.querySelector('span[data-attr="taxesAmount"]')
-            taxesAmount.appendChild(document.createTextNode(data.taxesAmount))      
-            debugger      
-
+            taxesAmount.appendChild(document.createTextNode(data.taxesAmount))
+            
             let taxesPercent = document.querySelector('span[data-attr="taxesPercent"]')
             taxesAmount.appendChild(document.createTextNode(` (${data.taxesPercent} %)`))  
 
