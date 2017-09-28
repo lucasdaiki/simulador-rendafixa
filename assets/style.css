@@ -194,3 +194,11 @@ table + .iz-btn {
   font: 14px/20px DINPro-Light;
   color: #333;
 }
+
+.iz-box {
+  display: none;
+}
+
+.iz-box.active {
+  display: block;
+}
