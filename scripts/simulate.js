@@ -44,8 +44,8 @@
             let taxesAmount = document.querySelector('span[data-attr="taxesAmount"]')
             taxesAmount.appendChild(document.createTextNode(data.taxesAmount))
 
-            let taxesPercent = document.querySelector('span[data-attr="taxesPercent"]')
-            taxesAmount.appendChild(document.createTextNode(` (${data.taxesPercent} %)`))  
+            let taxesRate = document.querySelector('span[data-attr="taxesRate"]')
+            taxesAmount.appendChild(document.createTextNode(` (${data.taxesRate} %)`))  
 
             let netAmount = document.querySelector('td[data-attr="netAmount"]')
             netAmount.appendChild(document.createTextNode(data.netAmount))
