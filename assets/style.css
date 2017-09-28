@@ -62,10 +62,6 @@ fieldset {
   letter-spacing: 0;
 }
 
-input {
-  border: none;
-  outline: none;
-}
 [type="date"]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
   appearance: none;
@@ -76,12 +72,14 @@ input {
   color: #999;
 }
 
-[type="number"], [type="text"], [type="date"] {
+input {
   font: 40px DINPro-Light;
   color: #333;
   letter-spacing: 0;
   width: 100%;
   text-align: center;
+  border: none;
+  outline: none;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
