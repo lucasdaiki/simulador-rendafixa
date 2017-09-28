@@ -4,7 +4,7 @@
   "description": "Simulador de Renda Fixa Pré e Pós",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
+    "start": "http-server .",
     "build": "gulp minify"
   },
   "repository": {
