@@ -20,39 +20,99 @@
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+
 <main>
 	<a href="http://easynvest.com.br/"><img src="assets/images/logo.svg" alt="Easynvest - Simulador de Renda Fixa"></a>
 	
 	<h1>Simular Renda Fixa Pós-Fixado</h1>
 
-	<div class="iz-box">
-		<form>
+	<section class="iz-box simulation active">
+		<form class="iz-form">
 			<fieldset>
 				<label>
-					<span class="iz-label-text">Quanto você gostaria de aplicar?</span>
-					<input type="number" name="" placeholder="1000">
+					<span class="iz-label-text">Quanto você gostaria de aplicar? * </span>
+					<input type="number" name="investedAmount" placeholder="1000">
 				</label>
 				<label>
-					<span class="iz-label-text">Qual a data de vencimento do papel?</span>
-					<input type="date" name="">
+					<span class="iz-label-text">Qual a data de vencimento do papel? * </span>
+					<input type="date" name="maturityDate">
 				</label>
 				<label>
-					<span class="iz-label-text">Qual o percentual do CDI do papel?</span>
-					<input type="number" name="" placeholder="120%">
+					<span class="iz-label-text">Qual o percentual do CDI do papel? * </span>
+					<input type="number" name="rate" placeholder="120%">
 				</label>
-				<span class="iz-label-text">Percentual do CDI ao ano:</span>
-				<b class="iz-future-cdi">8,14%</b>
 			</fieldset>
-			<button class="iz-btn iz-btn-simular">Simular</button>
+			<button class="iz-btn iz-btn-simular" type="button">Simular</button>
 		</form>
-	</div>
+	</section>
 
+	<section class="iz-box result">
+		<p>Resultado da simulação</p>
+		<p class="iz-result-value" data-attr="grossAmount">7.500,00</p>
+		<p class="iz-rend">Rendimento total de <span data-attr="grossAmountProfit">1.000,00</span></p>
+		<table>
+			<tbody>
+				<tr>
+					<th>Valor aplicado inicialmente</th>
+					<td class="iz-align-right iz-sign" data-attr="investedAmount">6.500,00</td>
+				</tr>
+				<tr>
+					<th>Valor bruto do investimento</th>
+					<td class="iz-align-right iz-sign" data-attr="grossAmount">7.500,00</td>
+				</tr>
+				<tr>
+					<th>Valor do rendimento</th>
+					<td class="iz-align-right iz-sign" data-attr="grossAmountProfit">1.000,00</td>
+				</tr>
+				<tr>
+					<th>IR sobre o investimento</th>
+					<td class="iz-align-right iz-sign"><span data-attr="taxesAmount">500</span> <span data-attr="taxesPercent">(15%)</span></td>
+				</tr>
+				<tr>
+					<th>Valor líquido do investimento</th>
+					<td class="iz-align-right iz-sign" data-attr="netAmount">7.000,00</td>
+				</tr>
+			</tbody>
+		</table>
+		<table>
+			<tbody>
+				<tr>
+					<th>Data de resgate</th>
+					<td class="iz-align-right" data-attr="maturityDate">10/05/2020</td>
+				</tr>
+				<tr>
+					<th>Dias corridos</th>
+					<td class="iz-align-right" data-attr="maturityTotalDays">1080</td>
+				</tr>
+				<tr>
+					<th>Rendimento mensal</th>
+					<td class="iz-align-right iz-percent" data-attr="monthlyGrossRateProfit">0,71</td>
+				</tr>
+				<tr>
+					<th>Percentual do CDI do papel</th>
+					<td class="iz-align-right iz-percent" data-attr="rate">123</td>
+				</tr>
+				<tr>
+					<th>Taxa DI (ano)</th>
+					<td class="iz-align-right iz-percent" data-attr="annualGrossRateProfit">8,14</td>
+				</tr>
+			</tbody>
+		</table>
 
+		<button class="iz-btn">Simular novamente</button>
+	</section>
+
+	<p class="iz-disclaimer">
+		Data da última atualização: 27/09/2017 <br>
+		Valores referentes a data da última atualização e não há garantia de rentabilidade dado que as informações podem sofrer alterações de acordo com o mercado.<br>
+		Taxa de CDI ao ano atualizada no dia 27/09/2017. Fonte: Anbima.<br>
+	</p>
 	<div class="iz-mobile-badges">
 		<a href="https://itunes.apple.com/br/app/easynvest-renda-fixa/id1065904944?mt=8"><img src="assets/images/appstore.png"></a>
 		<a href="https://play.google.com/store/apps/details?id=br.com.easynvest.rendafixa&hl=pt-BR"><img src="assets/images/google-play.png"></a>
 	</div>
 </main>
+
 
 <script src="node_modules/axios/dist/axios.min.js"></script>
 <script src="scripts/simulate.js"></script>
