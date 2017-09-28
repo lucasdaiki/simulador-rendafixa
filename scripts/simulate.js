@@ -2,7 +2,6 @@
     function () {
         function handleSimulate (e) {
             e.preventDefault()
-            // ?investedAmount=1000&index=CDI&rate=100&isTaxFree=false&maturityDate=2017-12-25
             const URL_API_SIMULATOR = 'http://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate'
 
             const investedAmount = document.querySelector('input[name=investedAmount]').value
@@ -13,9 +12,9 @@
 
             axios.get(URL_API_SIMULATOR, {
                 params: {
-                    investedAmount: investedAmount,
+                    investedAmount: investedAmount.replace(/\./g, '').replace('R$', '').trim(),
                     index: 'CDI',
-                    rate: rate,
+                    rate: rate.replace(/\./g, '').replace('%', '').trim(),
                     isTaxFree: false,
                     maturityDate: maturityDate
                 }
@@ -74,6 +73,39 @@
             return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
         }
 
-        document.querySelector('.iz-btn-simular').addEventListener('click', handleSimulate)   
+        function init() {
+            document.querySelector('.iz-btn-simular').addEventListener('click', handleSimulate)
+    
+            vanillaTextMask.maskInput({
+                inputElement: document.querySelector('input[name=investedAmount]'),
+                mask: createNumberMask.default({
+                    prefix: 'R$',
+                    thousandsSeparatorSymbol: '.',
+                    decimalSymbol: ',',
+                    allowDecimal: true,
+                    integerLimit: 7
+                })
+            })
+    
+            vanillaTextMask.maskInput({
+                inputElement: document.querySelector('input[name=maturityDate]'),
+                mask: [ /\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/ ],
+                guide: false
+            })
+            
+            vanillaTextMask.maskInput({
+                inputElement: document.querySelector('input[name=rate]'),
+                mask: createNumberMask.default({
+                    prefix: '',
+                    suffix: '%',
+                    thousandsSeparatorSymbol: '.',
+                    decimalSymbol: ',',
+                    allowDecimal: true,
+                    integerLimit: 3
+                })
+            })
+        }
+
+        init()
     }
 )()

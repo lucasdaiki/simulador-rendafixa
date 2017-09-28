@@ -31,15 +31,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<fieldset>
 				<label>
 					<span class="iz-label-text">Quanto você gostaria de aplicar? * </span>
-					<input type="number" name="investedAmount" placeholder="1000">
+					<input name="investedAmount" placeholder="R$">
 				</label>
 				<label>
 					<span class="iz-label-text">Qual a data de vencimento do papel? * </span>
-					<input type="date" name="maturityDate">
+					<input name="maturityDate" placeholder="dia/mês/ano">
 				</label>
 				<label>
 					<span class="iz-label-text">Qual o percentual do CDI do papel? * </span>
-					<input type="number" name="rate" placeholder="120%">
+					<input name="rate" placeholder="%">
 				</label>
 			</fieldset>
 			<button class="iz-btn iz-btn-simular" type="button">Simular</button>
@@ -115,6 +115,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <script src="node_modules/axios/dist/axios.min.js"></script>
+<script src="node_modules/vanilla-text-mask/dist/vanillaTextMask.js"></script>
+<script src="node_modules/text-mask-addons/dist/createNumberMask.js"></script>
 <script src="scripts/simulate.js"></script>
 </body>
 </html>
