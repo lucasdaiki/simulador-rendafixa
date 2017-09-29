@@ -107,6 +107,7 @@ input {
 
 .iz-mobile-badges img {
   max-width: 135px;
+  margin: 15px 10px 0;
 }
 
 .iz-btn {
