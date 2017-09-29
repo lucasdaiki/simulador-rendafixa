@@ -6,8 +6,12 @@ Você pode ver esse simulador funcionando aqui:
 
 Se quiser fazer nós usamos basicamente 3 endpoints de APIs que nos devolvem as informações necessárias:
 
-1. endpoint um
+1. https://easynvestsimulatorcalcapi.azurewebsites.net/calculator/simulate
 1. endpoint dois
 1. endpoint tres
 
 Se quiser, fique à vontade para usar esses endpoints em projetos pessoais.
+
+# Para rodar esse projeto
+Clonando o projeto, use o comando `npm install` na raiz do projeto.
+Depois rode o comando `gulp` para rodar o projeto.
