@@ -9,13 +9,15 @@
             const maturityDate = document.querySelector('input[name=maturityDate]').value
             const rate = document.querySelector('input[name=rate]').value
 
+            const parseDate = date => date.split('/').reverse().join('-')
+
             axios.get(URL_API_SIMULATOR, {
                 params: {
                     investedAmount: investedAmount.replace(/\./g, '').replace('R$', '').trim(),
                     index: 'CDI',
                     rate: rate.replace(/\./g, '').replace('%', '').trim(),
                     isTaxFree: false,
-                    maturityDate: maturityDate.replace(/\//g, '-')
+                    maturityDate:  parseDate(maturityDate)
                 }
             })
             .then(response => {
