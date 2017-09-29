@@ -202,3 +202,37 @@ table + .iz-btn {
   font: 14px/20px DINPro-Light;
   color: #333;
 }
+
+.iz-select {
+  position: relative;
+}
+
+.iz-select:after {
+  content: "";
+  background: url(images/arrow-select.png) no-repeat center;
+  background-size: 100%;
+  width: 17px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -5px;
+  z-index: 0;
+}
+
+.iz-select select {
+  font: 20px DINPro-Regular;
+  outline: none;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  width: 100%;
+  padding: 15px 0 15px 20px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  text-align-last:center;
+}
