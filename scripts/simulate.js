@@ -78,10 +78,17 @@
             
             document.querySelector('.iz-btn-simular').addEventListener('click', handleSimulate)
     
+            
+            document.querySelector('.iz-btn-again').addEventListener('click', function(){
+                document.querySelector('.iz-box.simulation').classList.add('active')
+                document.querySelector('.iz-box.result').classList.remove('active')    
+            });
+
             vanillaTextMask.maskInput({
                 inputElement: document.querySelector('input[name=investedAmount]'),
                 mask: createNumberMask.default({
                     prefix: 'R$',
+                    prefix: 'R$ ',
                     thousandsSeparatorSymbol: '.',
                     decimalSymbol: ',',
                     allowDecimal: true,
