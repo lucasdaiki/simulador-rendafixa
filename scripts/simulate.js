@@ -23,48 +23,67 @@
             .then(response => {
                 document.querySelector('.iz-box.simulation').classList.remove('active')
                 document.querySelector('.iz-box.result').classList.add('active')
+
+                document.querySelector('input[name=investedAmount]').value = ''
+                document.querySelector('input[name=maturityDate]').value = ''
+                document.querySelector('input[name=rate]').value = ''
+
                 fillSimulate(response.data)
+   
             })
             .catch(response => console.error(response))
         }
         function fillSimulate(data) {
-            let grossAmount = document.querySelector('p[data-attr="grossAmount"]')
+            let grossAmount = document.querySelector('[data-attr="grossAmount"]')
+            grossAmount.textContent = ''
             grossAmount.appendChild(document.createTextNode(data.grossAmount))
 
-            let grossAmountProfit = document.querySelector('span[data-attr="grossAmountProfit"]')
+            let grossAmountProfit = document.querySelector('[data-attr="grossAmountProfit"]')
+            grossAmountProfit.textContent = ''
             grossAmountProfit.appendChild(document.createTextNode(data.grossAmountProfit))
 
-            let investedAmount = document.querySelector('td[data-attr="investedAmount"]')
+            let investedAmount = document.querySelector('[data-attr="investedAmount"]')
+            investedAmount.textContent = ''
             investedAmount.appendChild(document.createTextNode(data.investmentParameter.investedAmount))
 
             let tdGrossAmount = document.querySelector('td[data-attr="grossAmount"]')
+            tdGrossAmount.textContent = ''
             tdGrossAmount.appendChild(document.createTextNode(data.grossAmount))
 
             let tdGrossAmountProfit = document.querySelector('td[data-attr="grossAmountProfit"]')
+            tdGrossAmountProfit.textContent = ''
             tdGrossAmountProfit.appendChild(document.createTextNode(data.grossAmountProfit))
 
             let taxesAmount = document.querySelector('span[data-attr="taxesAmount"]')
+            taxesAmount.textContent = ''
             taxesAmount.appendChild(document.createTextNode(data.taxesAmount))
 
             let taxesRate = document.querySelector('span[data-attr="taxesRate"]')
+            taxesRate.textContent = ''
             taxesAmount.appendChild(document.createTextNode(` (${data.taxesRate} %)`))  
 
             let netAmount = document.querySelector('td[data-attr="netAmount"]')
+            netAmount.textContent = ''
             netAmount.appendChild(document.createTextNode(data.netAmount))
 
             let maturityDate = document.querySelector('td[data-attr="maturityDate"]')
+            maturityDate.textContent = ''
             maturityDate.appendChild(document.createTextNode(convertDate(data.investmentParameter.maturityDate)))
 
             let maturityTotalDays = document.querySelector('td[data-attr="maturityTotalDays"]')
+            maturityTotalDays.textContent = ''
             maturityTotalDays.appendChild(document.createTextNode(data.investmentParameter.maturityTotalDays))
 
             let monthlyGrossRateProfit = document.querySelector('td[data-attr="monthlyGrossRateProfit"]')
+            monthlyGrossRateProfit.textContent = ''
             monthlyGrossRateProfit.appendChild(document.createTextNode(data.monthlyGrossRateProfit))
 
             let rate = document.querySelector('td[data-attr="rate"]')
+            rate.textContent = ''
             rate.appendChild(document.createTextNode(data.investmentParameter.rate))
 
             let annualGrossRateProfit = document.querySelector('td[data-attr="annualGrossRateProfit"]')
+            annualGrossRateProfit.textContent = ''
             annualGrossRateProfit.appendChild(document.createTextNode(data.annualGrossRateProfit))
         }
         function convertDate(inputFormat) {
@@ -79,11 +98,16 @@
             today.appendChild(document.createTextNode(convertDate(new Date())))
             
             document.querySelector('.iz-btn-simular').addEventListener('click', handleSimulate)
-    
+            
+            document.querySelector('.iz-btn-again').addEventListener('click', function(){
+                document.querySelector('.iz-box.simulation').classList.add('active')
+                document.querySelector('.iz-box.result').classList.remove('active')    
+            });
+
             vanillaTextMask.maskInput({
                 inputElement: document.querySelector('input[name=investedAmount]'),
                 mask: createNumberMask.default({
-                    prefix: 'R$',
+                    prefix: 'R$ ',
                     thousandsSeparatorSymbol: '.',
                     decimalSymbol: ',',
                     allowDecimal: true,
