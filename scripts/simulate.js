@@ -21,7 +21,13 @@
             .then(response => {
                 document.querySelector('.iz-box.simulation').classList.remove('active')
                 document.querySelector('.iz-box.result').classList.add('active')
+
+                document.querySelector('input[name=investedAmount]').value = ''
+                document.querySelector('input[name=maturityDate]').value = ''
+                document.querySelector('input[name=rate]').value = ''
+
                 fillSimulate(response.data)
+   
             })
             .catch(response => console.error(response))
         }
