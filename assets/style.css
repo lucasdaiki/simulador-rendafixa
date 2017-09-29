@@ -29,12 +29,17 @@ h1 {
 
 
 .iz-box {
-  margin: 80px 0;
+  display: none;
+  margin: 80px 0 50px;
   padding: 80px 0;
   width: 100%;
   background: #FFF;
   border: 0 solid #DDDCDC;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
+}
+
+.iz-box.active {
+  display: block;
 }
 
 form {
@@ -103,6 +108,10 @@ input {
   font: 40px DINPro-Regular;
   color: #000;
   letter-spacing: 0;
+}
+
+.iz-mobile-badges {
+  margin-bottom: 50px
 }
 
 .iz-mobile-badges img {
@@ -192,12 +201,4 @@ table + .iz-btn {
   text-align: center;
   font: 14px/20px DINPro-Light;
   color: #333;
-}
-
-.iz-box {
-  display: none;
-}
-
-.iz-box.active {
-  display: block;
 }
