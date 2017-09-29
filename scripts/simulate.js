@@ -81,10 +81,14 @@
             let rate = document.querySelector('td[data-attr="rate"]')
             rate.textContent = ''
             rate.appendChild(document.createTextNode(data.investmentParameter.rate))
-
+            
             let annualGrossRateProfit = document.querySelector('td[data-attr="annualGrossRateProfit"]')
             annualGrossRateProfit.textContent = ''
             annualGrossRateProfit.appendChild(document.createTextNode(data.annualGrossRateProfit))
+
+            let rateProfit = document.querySelector('td[data-attr="rateProfit"]')
+            rateProfit.textContent = ''
+            rateProfit.appendChild(document.createTextNode(data.rateProfit))
         }
         function convertDate(inputFormat) {
             function pad(s) { return (s < 10) ? '0' + s : s; }
