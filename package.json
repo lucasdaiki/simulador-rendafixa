@@ -23,6 +23,7 @@
     "vanilla-text-mask": "^5.0.1"
   },
   "devDependencies": {
+    "eslint": "^4.8.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "http-server": "^0.10.0"
