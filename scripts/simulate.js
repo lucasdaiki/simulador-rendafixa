@@ -13,9 +13,9 @@
 
       axios.get(URL_API_SIMULATOR, {
         params: {
-          investedAmount: investedAmount.replace(/\./g, '').replace('R$', '').trim(),
+          investedAmount: investedAmount.replace(/\./g, '').replace(/\,/g, '.').replace('R$', '').trim(),
           index: 'CDI',
-          rate: rate.replace(/\./g, '').replace('%', '').trim(),
+          rate: rate.replace(/\,/g, '.').replace('%', '').trim(),
           isTaxFree: false,
           maturityDate:  parseDate(maturityDate)
         }
