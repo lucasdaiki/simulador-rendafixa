@@ -137,7 +137,8 @@ input {
 }
 
 .iz-btn:disabled,
-.iz-btn.loading {
+.iz-btn.loading,
+.iz-btn.loading:hover {
   pointer-events: none;
   background-color: rgb(195, 202, 201);
 }

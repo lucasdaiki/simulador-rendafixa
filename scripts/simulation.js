@@ -36,9 +36,8 @@
                 const dateIsValid = maturityDateElement.value.length === 10 && today.isBefore(maturityDate)
                 const souldSubmit = investedAmountElement.value && rateElement.value && dateIsValid
 
-                if(souldSubmit){
+                if(souldSubmit)
                     simulateButtonElement.removeAttribute('disabled')
-                }
                 else
                     simulateButtonElement.setAttribute('disabled', '')
             }
@@ -83,8 +82,8 @@
             const maturityDate = maturityDateElement.value
             const rate = rateElement.value
             
-            simulateButtonElement.setAttribute('disabled', '')
             simulateButtonElement.classList.add('loading')
+            simulateButtonElement.setAttribute('disabled', '')
 
             axios.get(simulator.configs.URL_API_SIMULATOR, {
               params: {
