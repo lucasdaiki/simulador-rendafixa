@@ -1,7 +1,7 @@
 (
     function () {
-        simulator.simulation = {}
-        simulator.simulation.fillResults = (fields) => {
+        simulator.results = {}
+        simulator.results.fillResults = (fields) => {
             getFieldsToFill(fields).forEach(field => fillField(field.fieldName, field.value))
         }
         

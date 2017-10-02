@@ -64,7 +64,7 @@
                 document.querySelector('input[name=maturityDate]').value = ''
                 document.querySelector('input[name=rate]').value = ''
       
-                simulator.simulation.fillResults(response.data)             
+                simulator.results.fillResults(response.data)             
       
               })
               .catch(response => console.error(response))
