@@ -123,18 +123,36 @@ input {
   border-radius: 30px;
   border: none;
   cursor: pointer;
-  background: rgba(0, 200, 179, 1);
+  background-color: rgba(0, 200, 179, 1);
   color: #fff;
   font: 16px DINPro-Light;
   max-width: 360px;
   width: 90%;
   height: 50px;
-  margin-top: 20px;
-  transition: all .15s linear;
+  
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.iz-btn:disabled,
+.iz-btn.loading,
+.iz-btn.loading:hover {
+  pointer-events: none;
+  background-color: rgb(195, 202, 201);
 }
 
 .iz-btn:hover {
-  background: rgba(0, 200, 179, .7);
+  background-color: rgba(0, 200, 179, .7);
+}
+
+.iz-btn.loading::after {
+  content: '';
+  background-image: url("images/loading.svg");
+  width: 35px;
+  height: 35px;
+  background-repeat: no-repeat;
 }
 
 .iz-result-value {
