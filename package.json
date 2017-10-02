@@ -19,6 +19,7 @@
   "homepage": "https://github.com/easynvest/simulador-rendafixa#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "moment": "^2.18.1",
     "text-mask-addons": "^3.6.0",
     "vanilla-text-mask": "^5.0.1"
   },
