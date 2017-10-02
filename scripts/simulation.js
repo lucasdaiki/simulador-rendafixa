@@ -1,18 +1,44 @@
 (
     function() {
         function init() {
-            let today = document.querySelector('span[data-attr="today"]')
-            today.appendChild(document.createTextNode(simulator.dateParsers.fromAPI(new Date())))
+            const today = new Date()
+            const todayElement = document.querySelector('span[data-attr="today"]')
+            todayElement.appendChild(document.createTextNode(simulator.dateParsers.fromAPI(today)))
         
             document.querySelector('.iz-btn-simular').addEventListener('click', handleSimulate)
-        
+            document.querySelector('.iz-form').addEventListener('submit', handleSimulate)
+            
             document.querySelector('.iz-btn-again').addEventListener('click', function () {
                 document.querySelector('.iz-box.simulation').classList.add('active')
                 document.querySelector('.iz-box.result').classList.remove('active')
             })
-        
+
+            setInputHandles()
+        }
+
+        function setInputHandles() {
+            const investedAmountElement = document.querySelector('input[name=investedAmount]')
+            const maturityDateElement = document.querySelector('input[name=maturityDate]')
+            const rateElement = document.querySelector('input[name=rate]')
+
+            function validateForm() {
+                const today = moment(new Date())
+                const maturityDate =  moment(maturityDateElement.value, 'DD/MM/YYYY')
+                const dateIsValid = maturityDateElement.value.length === 10 && today.isBefore(maturityDate)
+                const souldSubmit = investedAmountElement.value && rateElement.value && dateIsValid
+
+                if(souldSubmit)
+                    document.querySelector('.iz-btn-simular').removeAttribute('disabled')
+                else
+                    document.querySelector('.iz-btn-simular').setAttribute('disabled', true)
+            }
+            
+            investedAmountElement.addEventListener('keyup', validateForm)
+            maturityDateElement.addEventListener('keyup', validateForm)
+            rateElement.addEventListener('keyup', validateForm)
+
             vanillaTextMask.maskInput({
-                inputElement: document.querySelector('input[name=investedAmount]'),
+                inputElement: investedAmountElement,
                 mask: createNumberMask.default({
                     prefix: 'R$ ',
                     thousandsSeparatorSymbol: '.',
@@ -23,13 +49,13 @@
             })
         
             vanillaTextMask.maskInput({
-                inputElement: document.querySelector('input[name=maturityDate]'),
+                inputElement: maturityDateElement,
                 mask: [/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/],
                 guide: false
             })
         
             vanillaTextMask.maskInput({
-                inputElement: document.querySelector('input[name=rate]'),
+                inputElement: rateElement,
                 mask: createNumberMask.default({
                     prefix: '',
                     suffix: '%',
