@@ -123,7 +123,7 @@ input {
   border-radius: 30px;
   border: none;
   cursor: pointer;
-  background: rgba(0, 200, 179, 1);
+  background-color: rgba(0, 200, 179, 1);
   color: #fff;
   font: 16px DINPro-Light;
   max-width: 360px;
@@ -133,8 +133,14 @@ input {
   transition: all .15s linear;
 }
 
+.iz-btn:disabled {
+  pointer-events: none;
+  background-color: rgb(195, 202, 201);
+
+}
+
 .iz-btn:hover {
-  background: rgba(0, 200, 179, .7);
+  background-color: rgba(0, 200, 179, .7);
 }
 
 .iz-result-value {
