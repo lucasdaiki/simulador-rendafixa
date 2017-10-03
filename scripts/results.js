@@ -6,7 +6,7 @@
         }
         
         const MASKS = {
-            MONEY: value => `${value.toString().replace('.', ',')}`,
+            MONEY: value => VMasker.toMoney(value.toString()),
             PERCENTAGE: value => `(${value.toString().replace('.', ',')}%)`,
             DATE: simulator.dateParsers.fromAPI
         }
