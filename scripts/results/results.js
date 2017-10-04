@@ -13,6 +13,7 @@
                 .then(fillFields)
                 .then(() => document.querySelector('.iz-box.result').classList.remove('blank'))
                 .then(() => document.querySelector('.iz-box.loading').classList.add('hide'))
+                .catch(() => window.location = '/')
         }
 
         const fillFields = (fieldsToFill) => {
