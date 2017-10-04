@@ -29,17 +29,12 @@ h1 {
 
 
 .iz-box {
-  display: none;
   margin: 80px 0 50px;
   padding: 80px 0;
   width: 100%;
   background: #FFF;
   border: 0 solid #DDDCDC;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06);
-}
-
-.iz-box.active {
-  display: block;
 }
 
 form {
