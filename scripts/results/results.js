@@ -11,6 +11,8 @@
             simulator.calculate(params)
                 .then(simulator.results.getFieldsToFill)
                 .then(fillFields)
+                .then(() => document.querySelector('.iz-box.result').classList.remove('blank'))
+                .then(() => document.querySelector('.iz-box.loading').classList.add('hide'))
         }
 
         const fillFields = (fieldsToFill) => {
