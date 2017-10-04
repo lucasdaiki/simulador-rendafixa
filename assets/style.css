@@ -254,3 +254,11 @@ table + .iz-btn {
   text-align: center;
   text-align-last:center;
 }
+
+.taxesRate::before {
+  content: '(';
+}
+
+.taxesRate::after {
+  content: '%)';
+}

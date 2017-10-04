@@ -4,12 +4,6 @@
         simulator.results.fillResults = (fields) => {
             getFieldsToFill(fields).forEach(field => fillField(field.fieldName, field.value))
         }
-        
-        const MASKS = {
-            MONEY: value => VMasker.toMoney(value.toString()),
-            PERCENTAGE: value => `(${value.toString().replace('.', ',')}%)`,
-            DATE: simulator.dateParsers.fromAPI
-        }
 
         const fillField = (fieldName, value) => {
             document
@@ -20,61 +14,60 @@
         const getFieldsToFill = (fields) => [
             {
                 fieldName: 'grossAmount',
-                value: MASKS.MONEY(fields.grossAmount)
+                value: simulator.masks.MONEY(fields.grossAmount)
             },
             {
                 fieldName: 'grossAmountProfit',
-                value: MASKS.MONEY(fields.grossAmountProfit)
+                value: simulator.masks.MONEY(fields.grossAmountProfit)
             },
             {
                 fieldName: 'investedAmount',
-                value: MASKS.MONEY(fields.investmentParameter.investedAmount)
+                value: simulator.masks.MONEY(fields.investmentParameter.investedAmount)
             },
             {
                 fieldName: 'grossAmount',
-                value: MASKS.MONEY(fields.grossAmount)
+                value: simulator.masks.MONEY(fields.grossAmount)
             },
             {
                 fieldName: 'grossAmountProfit',
-                value: MASKS.MONEY(fields.grossAmountProfit)
+                value: simulator.masks.MONEY(fields.grossAmountProfit)
             },
             {
                 fieldName: 'taxesAmount',
-                value: MASKS.MONEY(fields.taxesAmount)
+                value: simulator.masks.MONEY(fields.taxesAmount)
             },
             {
                 fieldName: 'taxesRate',
-                value: MASKS.PERCENTAGE(fields.taxesRate)
+                value: simulator.masks.PERCENTAGE(fields.taxesRate)
             },
             {
                 fieldName: 'netAmount',
-                value: MASKS.MONEY(fields.netAmount)
+                value: simulator.masks.MONEY(fields.netAmount)
             },
             {
                 fieldName: 'maturityDate',
-                value: MASKS.DATE(fields.investmentParameter.maturityDate)
+                value: simulator.masks.DATE(fields.investmentParameter.maturityDate)
             },
             {
                 fieldName: 'maturityTotalDays',
-                value: MASKS.MONEY(fields.investmentParameter.maturityTotalDays)
+                value: simulator.masks.NUMBER(fields.investmentParameter.maturityTotalDays)
             },
             {
                 fieldName: 'monthlyGrossRateProfit',
-                value: MASKS.MONEY(fields.monthlyGrossRateProfit)
+                value: simulator.masks.PERCENTAGE(fields.monthlyGrossRateProfit)
             },
             {
                 fieldName: 'rate',
-                value: MASKS.MONEY(fields.investmentParameter.rate)
+                value: simulator.masks.PERCENTAGE(fields.investmentParameter.rate)
             },
             {
                 fieldName: 'annualGrossRateProfit',
-                value: MASKS.MONEY(fields.annualGrossRateProfit)
+                value: simulator.masks.PERCENTAGE(fields.annualGrossRateProfit)
             },
             {
                 fieldName: 'rateProfit',
-                value: MASKS.MONEY(fields.rateProfit)
+                value: simulator.masks.PERCENTAGE(fields.rateProfit)
             }
         ]
-
     }
 )()
