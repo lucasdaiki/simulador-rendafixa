@@ -124,6 +124,7 @@ input {
   max-width: 360px;
   width: 90%;
   height: 50px;
+  text-decoration: none;
   
   display: flex;
   margin: 0 auto;
