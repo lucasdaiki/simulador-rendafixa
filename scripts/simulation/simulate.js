@@ -28,7 +28,7 @@
             params.append('rate', rate)
             params.append('maturityDate', maturityDate)
 
-            window.location.href = `/results?${params.toString()}`
+            window.location.href = `results?${params.toString()}`
         }
 
     }
