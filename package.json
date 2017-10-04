@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server .",
+    "lint": "eslint scripts/**/*.js",
     "build": "gulp minify"
   },
   "repository": {
