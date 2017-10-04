@@ -1,17 +1,6 @@
 (
-    function () {
-        simulator.results = {}
-        simulator.results.fillResults = (fields) => {
-            getFieldsToFill(fields).forEach(field => fillField(field.fieldName, field.value))
-        }
-
-        const fillField = (fieldName, value) => {
-            document
-                .querySelectorAll(`[data-attr="${fieldName}"]`)
-                .forEach(e => { e.textContent = value; })
-        }
-
-        const getFieldsToFill = (fields) => [
+    function() {
+        simulator.results.getFieldsToFill = (fields) => [
             {
                 fieldName: 'grossAmount',
                 value: simulator.masks.MONEY(fields.grossAmount)
