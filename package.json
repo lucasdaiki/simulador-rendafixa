@@ -2,7 +2,7 @@
   "name": "easynvest.simulation.client",
   "version": "1.0.0",
   "description": "Simulador de Renda Fixa Pré e Pós",
-  "main": "index.js",
+  "main": "dist/bundle.js",
   "scripts": {
     "start": "http-server .",
     "lint": "eslint scripts/**/*.js",
@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/easynvest/simulador-rendafixa.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Easynvest",
+  "license": "Apache 2.0",
   "bugs": {
     "url": "https://github.com/easynvest/simulador-rendafixa/issues"
   },
